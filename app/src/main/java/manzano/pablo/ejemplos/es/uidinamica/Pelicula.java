@@ -7,12 +7,12 @@ public class Pelicula implements Serializable {
     private String id;
     private String titulo;
     private String genero;
-    private String portada;
-    private String valoracion;
-    private String duracion;
+    private int portada;
+    private float valoracion;
+    private int duracion;
     private String comentario;
 
-    public Pelicula (String id, String titulo, String genero, String portada, String valoracion, String duracion, String sinopsis){
+    public Pelicula (String id, String titulo, String genero, int portada, float valoracion, int duracion, String sinopsis, String comentario){
 
         this.id=id;
         this.titulo=titulo;
@@ -47,27 +47,27 @@ public class Pelicula implements Serializable {
         this.genero = genero;
     }
 
-    public String getPortada() {
+    public int getPortada() {
         return portada;
     }
 
-    public void setPortada(String portada) {
+    public void setPortada(int portada) {
         this.portada = portada;
     }
 
-    public String getValoracion() {
+    public float getValoracion() {
         return valoracion;
     }
 
-    public void setValoracion(String valoracion) {
+    public void setValoracion(float valoracion) {
         this.valoracion = valoracion;
     }
 
-    public String getDuracion() {
+    public int getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(String duracion) {
+    public void setDuracion(int duracion) {
         this.duracion = duracion;
     }
 

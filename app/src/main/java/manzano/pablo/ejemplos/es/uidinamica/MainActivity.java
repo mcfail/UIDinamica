@@ -23,7 +23,7 @@ public class MainActivity extends FragmentActivity {
     private void montaFragments(){
 
 
-        ListaFragment listaFragment = new ListaFragment
+        ListaFragments listaFragment = new ListaFragments();
     }
 
     @Override
