@@ -3,12 +3,17 @@ package manzano.pablo.ejemplos.es.uidinamica;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+
+import static manzano.pablo.ejemplos.es.uidinamica.R.id.listadoPelicula;
+
 public class MainActivity extends FragmentActivity {
 
-
+    private ArrayList<Pelicula> peliculas = new ArrayList<Pelicula>();
 
 
     @Override
@@ -24,9 +29,33 @@ public class MainActivity extends FragmentActivity {
 
     private void montaFragments(){
 
-
         ListaFragments listaFragment = new ListaFragments();
+        ArraySerializable listaPeli = new ArraySerializable(peliculas);
+        Bundle extras = new Bundle();
+        extras.putSerializable("listaPeli", listaPeli);
+        listaFragment.setArguments(extras);
     }
+    public void onItemSelected(int position){
+        DetallePelicula detallePelicula = (DetallePelicula) getSupportFragmentManager().findFragmentById(R.id.listadoPelicula);
+
+        if(detallePelicula != null){
+            detallePelicula.actualiza(peliculas.get(position));
+
+
+        }else{
+            detallePelicula = new DetallePelicula();
+
+            Bundle args = new Bundle();
+            args.putSerializable("peliserializada", peliculas.get(position));
+            detallePelicula.setArguments(args);
+
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.listadoPelicula, detallePelicula);
+            transaction.addToBackStack(null);
+            transaction.commit();
+        }
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

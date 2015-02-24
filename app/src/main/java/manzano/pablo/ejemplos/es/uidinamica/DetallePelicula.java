@@ -1,6 +1,6 @@
 package manzano.pablo.ejemplos.es.uidinamica;
 
-import android.app.Fragment;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.support.v4.app.Fragment;
 
 /**
  * Created by AlumnoT on 24/02/2015.
