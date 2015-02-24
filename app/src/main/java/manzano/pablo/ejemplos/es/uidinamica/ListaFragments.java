@@ -11,7 +11,7 @@ import android.widget.ListView;
 
 public class ListaFragments extends ListFragment {
 
-    private ItemlistSelected listener;
+    private ItemListSelected listener;
     private ArrayList<Pelicula> listapelis;
 
     @Override
@@ -31,7 +31,21 @@ public class ListaFragments extends ListFragment {
         super.onCreate((savedInstanceState));
 
         Bundle extras=getArguments();
-        SerializableArray array = extras.getSerializable("");
-        listapelis = array.lista;
+        ArraySerializable array = (ArraySerializable)extras.getSerializable("");
+        listapelis = array.data;
+
+        PeliAdapter adapter = new PeliAdapter(getActivity(), R.layout.row_pelis, listapelis);
+        setListAdapter((android.widget.ListAdapter) adapter); //igual peta
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id){
+        super.onListItemClick(l, v, position, id);
+        listener.onItemSelected(position);
+    }
+
+
+    public interface ItemListSelected {
+        public void onItemSelected(int position);
     }
 }

@@ -5,7 +5,7 @@ android {
     buildToolsVersion "21.1.2"
     defaultConfig {
         applicationId "manzano.pablo.ejemplos.es.uidinamica"
-        minSdkVersion 10
+        minSdkVersion 16
         targetSdkVersion 20
         versionCode 1
         versionName "1.0"
