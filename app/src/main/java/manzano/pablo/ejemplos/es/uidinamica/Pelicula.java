@@ -12,6 +12,9 @@ public class Pelicula implements Serializable {
     private int duracion;
     private String comentario;
 
+    public Pelicula() {
+    }
+
     public Pelicula (String id, String titulo, String genero, int portada, float valoracion, int duracion, String sinopsis, String comentario){
 
         this.id=id;

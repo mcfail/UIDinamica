@@ -1,35 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context="com.manzano.pablo.ejemplos.es.uidinamica.ListaFragments"
     android:weightSum="1">
 
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-
-        <ImageButton
-            android:layout_width="170dp"
-            android:layout_height="230dp"
-            android:id="@+id/p01"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="12dp"
-            android:background="#ff50ff49"
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY" />
-
-        <ImageButton
-            android:layout_width="170dp"
-            android:layout_height="230dp"
-            android:id="@+id/p02"
-            android:background="#ff50ff49"
-            android:adjustViewBounds="true"
-            android:layout_marginRight="12dp"
-            android:layout_marginEnd="25dp"
-            android:layout_alignTop="@+id/p01"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:scaleType="fitXY" />
-    </RelativeLayout>
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/gridView"
+        android:numColumns="3"
+        android:horizontalSpacing="18dp"
+        android:verticalSpacing="6dp" />
 
 </LinearLayout>

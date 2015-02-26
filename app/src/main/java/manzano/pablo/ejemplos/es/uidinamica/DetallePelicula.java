@@ -40,8 +40,9 @@ public class DetallePelicula extends Fragment{
         portada.setBackground(getActivity().getResources().getDrawable(peliElegida.getPortada()));
 
         RatingBar rating = (RatingBar) getActivity().findViewById(R.id.ratingBar);
+        rating.setVisibility(View.VISIBLE);
         float rat= peliElegida.getValoracion();
-       rating.setRating(rat);
+        rating.setRating(rat);
         rating.setEnabled(false);
 
 
@@ -53,11 +54,6 @@ public class DetallePelicula extends Fragment{
 
         TextView sinopsis=(TextView) getActivity().findViewById(R.id.sinopsis);
         tituloPelicula.setText(peliElegida.getComentario());
-
-
-
-
-
 
     }
 }

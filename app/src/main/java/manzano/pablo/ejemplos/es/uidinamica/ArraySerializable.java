@@ -17,7 +17,7 @@ public class ArraySerializable implements Serializable {
     public static ArrayList<Pelicula> arrayPelis(){
         ArrayList<Pelicula> peliculas = new ArrayList<Pelicula>();
 
-        Pelicula p = null;
+        Pelicula p = new Pelicula();
         p.setId("01");
         p.setTitulo("Las aventuras de Ford Fairlane");
         p.setGenero("Acción / Comedia");
